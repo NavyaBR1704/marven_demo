@@ -50,6 +50,25 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <!-- Specify the main class to be executed -->
+                    <archive>
+                        <manifestEntries>
+                            <Main-Class>mv</Main-Class> <!-- Replace with your actual main class -->
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.12.1</version>  <!-- Use the latest version -->
+            </plugin>
         </plugins>
     </build>
     <properties>
@@ -57,5 +76,11 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    <distributionManagement>
+        <repository>
+            <id>local-repo</id>
+            <url>file:///D:/svit-local-repo</url>
+        </repository>
+    </distributionManagement>
 
 </project>

@@ -16,8 +16,8 @@ public class WebpageTest {
     public void openBrowser() throws InterruptedException {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        Thread.sleep(2000);
-        driver.get("");
+        Thread.sleep(5000);
+        driver.get("https://navyabr1704.github.io/marven_demo/");
     }
 
     @Test
